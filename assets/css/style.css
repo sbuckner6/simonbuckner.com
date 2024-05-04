@@ -494,6 +494,12 @@ button:active {
     color: #aaa;
 }
 
+@media (min-width: 2020px) {
+    .hero video {
+        transform: translate(0%, -15%);
+    }
+}
+
 @media (max-width: 767px) {
     .wide-column {
         align-items: inherit;
