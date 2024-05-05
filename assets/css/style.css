@@ -241,10 +241,9 @@ div {
 
 .sticky-logo a {
     color: white;
-    font-family: 'Helvetica';
-    font-weight: bold;
-    text-decoration: none;
+    font-family: "Russo One", sans-serif;
     font-size: 21px;
+    text-decoration: none;
     letter-spacing: 0.15em;
 }
 
