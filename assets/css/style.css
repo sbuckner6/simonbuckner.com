@@ -36,17 +36,23 @@ form {
 }
 
 h1 {
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     font-size: 350%;
 }
 
-.hero h1 {
-    text-transform: uppercase;
-}
 
 .hero h3 {
-    padding-top: 5%;
-    color: #867;
+    font-family: "Russo One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #645;
+    &.subtitle{
+        padding-top: 5%;
+    }
 }
+
 
 h2 {
     font-size: 150%;
@@ -281,6 +287,43 @@ div {
     height: 50vh;
 }
 
+.scroll-button {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 100;
+}
+
+.scroll-button.visible {
+    opacity: 1;
+}
+
+.scroll-button.invisible {
+    opacity: 0;
+}
+
+.scroll-button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -70%) rotate(315deg);
+    width: 20px;
+    height: 20px;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+}
+
+
+
 .nav-bar {
     margin:0;
     max-height:5.57vh;
@@ -432,7 +475,7 @@ div {
     right: 0;
     z-index: 1;
     list-style: none;
-    top:4.57vh;
+    top:5vh;
     transition: 0.38s all ease;
     transform:translateY(-300px);
     opacity:0;
@@ -470,17 +513,6 @@ div {
     letter-spacing: 0.15em;
 }
 
-.mobile-menu li a:hover {
-    background-color: #867;
-    color: white;
-}
-
-.mobile-menu li a:active {
-    background-color: #645;
-    color: #aaa;
-}
-
-
 button {
     background-color: c5cacd;
     width: 15.5vw;
@@ -505,6 +537,10 @@ button:active {
     color: #aaa;
 }
 
+.mobile-subtitle {
+    display: none;
+}
+
 @media (min-width: 2020px) {
     .hero video {
         object-position: center;
@@ -512,6 +548,14 @@ button:active {
 }
 
 @media (max-width: 767px) {
+    .subtitle {
+        display: none;
+    }
+
+    .mobile-subtitle {
+        display: block;
+    }
+
     .wide-column {
         align-items: inherit;
         width: 100%;
@@ -567,10 +611,6 @@ button:active {
         padding-top: 12px;
         padding-bottom: 12px;
         padding-right: 18px;
-    }
-
-    .mobile-menu-icon a:active {
-        color: #645;  
     }
 
     p {
